@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Portfolio</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <h1 class="logo">My Portfolio</h1>
+            <nav>
+                <a href="#about">About</a>
+                <a href="#projects">Projects</a>
+                <a href="#contact">Contact</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero fade-in">
+        <img src="C:\Users\Pravin\Downloads\my photo.jpg" alt="Profile Photo" class="profile-img">
+        <h1>Hi, I'm <span>Pravin</span></h1>
+        <p>Web Developer | Designer | Learner</p>
+        <a href="#projects" class="btn">View My Work</a>
+    </section>
+
+    <!-- About -->
+    <section id="about" class="about fade-in">
+        <div class="container">
+            <h2>About Me</h2>
+            <p>
+                I’m a passionate web developer who creates clean, responsive, and interactive websites.
+                I focus on performance, design, and user experience to make digital experiences enjoyable.
+            </p>
+        </div>
+    </section>
+
+    <!-- Projects -->
+    <section id="projects" class="projects fade-in">
+        <div class="container">
+            <h2>Projects</h2>
+            <div class="project-list">
+                <div class="project">
+                    <img src="C:\Users\Pravin\Downloads\project 1.jpg" alt="Project 1">
+                    <h3>Portfolio Website</h3>
+                    <p>A modern portfolio site with smooth animations and responsive design.</p>
+                </div>
+                <div class="project">
+                    <img src="C:\Users\Pravin\Downloads\project 2.jpg" alt="Project 2">
+                    <h3>Landing Page</h3>
+                    <p>A minimal landing page design with attractive hover effects and mobile-friendly layout.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact" class="contact fade-in">
+        <div class="container">
+            <h2>Contact</h2>
+            <p>Email: <a href="mailto:example@email.com">example@email.com</a></p>
+            <p>Phone: +91 98765 43210</p>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2025 My Portfolio | Designed by Pravin</p>
+    </footer>
+
+    <!-- Scroll Animation Script -->
+    <script>
+        const faders = document.querySelectorAll('.fade-in');
+        const appearOptions = { threshold: 0.2, rootMargin: "0px 0px -50px 0px" };
+        const appearOnScroll = new IntersectionObserver(function(entries, observer) {
+            entries.forEach(entry => {
+                if (!entry.isIntersecting) return;
+                entry.target.classList.add('appear');
+                observer.unobserve(entry.target);
+            });
+        }, appearOptions);
+
+        faders.forEach(fader => appearOnScroll.observe(fader));
+    </script>
+
+</body>
+</html>
+
+
